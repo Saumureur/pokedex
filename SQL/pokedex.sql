@@ -33,12 +33,16 @@ CREATE TABLE Type (
 
 DROP TABLE IF EXISTS Poketype;
 CREATE TABLE Poketype (
+  PokemonID INT,
+  TypeID INT,
   FOREIGN KEY (PokemonID) REFERENCES Pokemon(ID),
   FOREIGN KEY (TypeID) REFERENCES Type(ID)
 );
 
 DROP TABLE IF EXISTS Poketal;
 CREATE TABLE Poketal (
+  PokemonID INT,
+  TalentID INT,
   FOREIGN KEY (PokemonID) REFERENCES Pokemon(ID),
   FOREIGN KEY (TalentID) REFERENCES Talent(ID)
 );

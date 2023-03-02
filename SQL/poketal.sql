@@ -1,4 +1,0 @@
-CREATE TABLE Poketal (
-  FOREIGN KEY (PokemonID) REFERENCES Pokemon(ID),
-  FOREIGN KEY (TalentID) REFERENCES Talent(ID)
-);
