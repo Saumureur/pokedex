@@ -4,45 +4,60 @@ USE pokedex;
 
 DROP TABLE IF EXISTS Pokemon;
 CREATE TABLE Pokemon (
-  ID INT PRIMARY KEY,
-  Name VARCHAR(255),
-  Description VARCHAR(255),
-  previousEvolution INT,
-  followingEvolution INT,
-  weight INT,
-  height INT,
-  frontSpriteURL VARCHAR(255),
-  backSpriteURL VARCHAR(255),
-  FOREIGN KEY (previousEvolution) REFERENCES Pokemon(ID),
-  FOREIGN KEY (followingEvolution) REFERENCES Pokemon(ID)
+  pokemonID INT PRIMARY KEY,
+  pokemonName VARCHAR(255),
+  pokemonDescription VARCHAR(255),
+  pokemonPreviousEvolution INT,
+  pokemonFollowingEvolution INT,
+  pokemonFrontSpriteURL VARCHAR(255),
+  pokemonBackSpriteURL VARCHAR(255),
+  FOREIGN KEY (previousEvolution) REFERENCES Pokemon(pokemonID),
+  FOREIGN KEY (followingEvolution) REFERENCES Pokemon(pokemonID)
 );
 
 DROP TABLE IF EXISTS Talent;
 CREATE TABLE Talent (
-  ID INT PRIMARY KEY,
-  Name VARCHAR(255),
-  Description VARCHAR(255)
+  talentID INT PRIMARY KEY,
+  talenName VARCHAR(255),
+  talentDescription VARCHAR(255)
+   
+);
+
+DROP TABLE IF EXISTS Attack;
+CREATE TABLE Attack (
+  attackID INT PRIMARY KEY,
+  attackName VARCHAR(255),
+  attackDescription VARCHAR(255)
 );
 
 DROP TABLE IF EXISTS Type;
 CREATE TABLE Type (
-  ID INT PRIMARY KEY,
-  Nom VARCHAR(255),
-  logoURL VARCHAR(255)
+  typeID INT PRIMARY KEY,
+  typeNom VARCHAR(255),
+  typelogoURL VARCHAR(255)
 );
 
 DROP TABLE IF EXISTS Poketype;
 CREATE TABLE Poketype (
-  PokemonID INT,
-  TypeID INT,
-  FOREIGN KEY (PokemonID) REFERENCES Pokemon(ID),
-  FOREIGN KEY (TypeID) REFERENCES Type(ID)
+  pokemonID INT,
+  typeID INT,
+  FOREIGN KEY (pokemonID) REFERENCES Pokemon(pokemonID),
+  FOREIGN KEY (typeID) REFERENCES Type(typeID)
 );
 
 DROP TABLE IF EXISTS Poketal;
 CREATE TABLE Poketal (
-  PokemonID INT,
-  TalentID INT,
-  FOREIGN KEY (PokemonID) REFERENCES Pokemon(ID),
-  FOREIGN KEY (TalentID) REFERENCES Talent(ID)
+  pokemonID INT,
+  talentID INT,
+  FOREIGN KEY (pokemonID) REFERENCES Pokemon(pokemonID),
+  FOREIGN KEY (talentID) REFERENCES Talent(talentID),
+  poketalIsHide boolean
+);
+
+DROP TABLE IF EXISTS AttackType;
+CREATE TABLE Poketype (
+  attackID INT,
+  typeID INT,
+  FOREIGN KEY (attackID) REFERENCES Attack(attackID),
+  FOREIGN KEY (typeID) REFERENCES Type(typeID)
 );
