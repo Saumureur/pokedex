@@ -1,0 +1,5 @@
+CREATE TABLE Talent (
+  ID INT PRIMARY KEY,
+  Name VARCHAR(255),
+  Description VARCHAR(255)
+);

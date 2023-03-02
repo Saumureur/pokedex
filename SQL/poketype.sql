@@ -1,0 +1,6 @@
+CREATE TABLE Poketype (
+  PokemonID INT,
+  TypeID INT,
+  FOREIGN KEY (PokemonID) REFERENCES Pokemon(ID),
+  FOREIGN KEY (TypeID) REFERENCES Type(ID)
+);
