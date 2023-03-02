@@ -1,2 +1,2 @@
 # pokedex
-un pekedex pour le cours de SQL
+un pokedex pour le cours de SQL
