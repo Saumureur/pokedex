@@ -29,7 +29,7 @@ CREATE TABLE Attack (
   attackID INT PRIMARY KEY,
   attackName VARCHAR(255),
   attackDescription VARCHAR(255)
-  FOREIGN KEY (attackType1) REFERENCES Type(TypeID),
+  FOREIGN KEY (attackType) REFERENCES Type(TypeID),
 );
 
 DROP TABLE IF EXISTS Type;
@@ -41,8 +41,7 @@ CREATE TABLE Type (
 
 DROP TABLE IF EXISTS PokeTal;
 CREATE TABLE PokeTal (
-  pokemonID INT,
-  talentID INT,
+  PokeTalID PRIMARY KEY,
   FOREIGN KEY (pokemonID) REFERENCES Pokemon(pokemonID),
   FOREIGN KEY (talentID) REFERENCES Talent(talentID),
   poketalIsHide boolean
@@ -50,6 +49,9 @@ CREATE TABLE PokeTal (
 
 DROP TABLE IF EXISTS PokAttack;
 CREATE TABLE PokAttack(
+  PokAttackID PRIMARY KEY,
+  FOREIGN KEY (pokemonID) REFERENCES Pokemon(pokemonID),
+  FOREIGN KEY (attackID) REFERENCES Attack(attackID),
 
 )
 
