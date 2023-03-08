@@ -9,7 +9,6 @@ CREATE TABLE Type (
   typelogoURL VARCHAR(255)
 );
 
-
 DROP TABLE IF EXISTS Pokemon;
 CREATE TABLE Pokemon (
   pokemonID INT PRIMARY KEY,
@@ -45,7 +44,6 @@ CREATE TABLE Attack (
 
 DROP TABLE IF EXISTS PokeTal;
 CREATE TABLE PokeTal (
-  PokeTalID INT PRIMARY KEY,
   pokemonID INT,
   talentID INT,
   FOREIGN KEY (pokemonID) REFERENCES Pokemon(pokemonID),
@@ -55,11 +53,9 @@ CREATE TABLE PokeTal (
 
 DROP TABLE IF EXISTS PokAttack;
 CREATE TABLE PokAttack(
-  PokAttackID INT PRIMARY KEY,
   pokemonID INT,
   attackID INT,
   FOREIGN KEY (pokemonID) REFERENCES Pokemon(pokemonID),
   FOREIGN KEY (attackID) REFERENCES Attack(attackID),
   naturalLearn boolean
-)
-
+);
