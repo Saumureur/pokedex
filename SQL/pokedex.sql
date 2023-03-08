@@ -2,6 +2,14 @@ DROP DATABASE IF EXISTS pokedex;
 CREATE DATABASE pokedex;
 USE pokedex;
 
+DROP TABLE IF EXISTS Type;
+CREATE TABLE Type (
+  TypeID INT PRIMARY KEY,
+  typeNom VARCHAR(255),
+  typelogoURL VARCHAR(255)
+);
+
+
 DROP TABLE IF EXISTS Pokemon;
 CREATE TABLE Pokemon (
   pokemonID INT PRIMARY KEY,
@@ -33,13 +41,6 @@ CREATE TABLE Attack (
   attackDescription VARCHAR(255),
   attackType INT,
   FOREIGN KEY (attackType) REFERENCES Type(TypeID)
-);
-
-DROP TABLE IF EXISTS Type;
-CREATE TABLE Type (
-  TypeID INT PRIMARY KEY,
-  typeNom VARCHAR(255),
-  typelogoURL VARCHAR(255)
 );
 
 DROP TABLE IF EXISTS PokeTal;
