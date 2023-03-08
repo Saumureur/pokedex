@@ -46,7 +46,7 @@ CREATE TABLE PokeTal (
   talentID INT NOT NULL,
   FOREIGN KEY (pokemonID) REFERENCES Pokemon(pokemonID),
   FOREIGN KEY (talentID) REFERENCES Talent(talentID),
-  poketalIsHide boolean
+  poketalIsHide boolean DEFAULT 0
 );
 
 DROP TABLE IF EXISTS PokAttack;
