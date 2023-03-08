@@ -12,7 +12,9 @@ CREATE TABLE Pokemon (
   pokemonFrontSpriteURL VARCHAR(255),
   pokemonBackSpriteURL VARCHAR(255),
   FOREIGN KEY (previousEvolution) REFERENCES Pokemon(pokemonID),
-  FOREIGN KEY (followingEvolution) REFERENCES Pokemon(pokemonID)
+  FOREIGN KEY (followingEvolution) REFERENCES Pokemon(pokemonID),
+  FOREIGN KEY (pokemonType1) REFERENCES Type(TypeID),
+  FOREIGN KEY (pokemonType2) REFERENCES Type(TypeID),
 );
 
 DROP TABLE IF EXISTS Talent;
@@ -20,7 +22,6 @@ CREATE TABLE Talent (
   talentID INT PRIMARY KEY,
   talenName VARCHAR(255),
   talentDescription VARCHAR(255)
-   
 );
 
 DROP TABLE IF EXISTS Attack;
@@ -28,25 +29,18 @@ CREATE TABLE Attack (
   attackID INT PRIMARY KEY,
   attackName VARCHAR(255),
   attackDescription VARCHAR(255)
+  FOREIGN KEY (attackType1) REFERENCES Type(TypeID),
 );
 
 DROP TABLE IF EXISTS Type;
 CREATE TABLE Type (
-  typeID INT PRIMARY KEY,
+  TypeID INT PRIMARY KEY,
   typeNom VARCHAR(255),
   typelogoURL VARCHAR(255)
 );
 
-DROP TABLE IF EXISTS Poketype;
-CREATE TABLE Poketype (
-  pokemonID INT,
-  typeID INT,
-  FOREIGN KEY (pokemonID) REFERENCES Pokemon(pokemonID),
-  FOREIGN KEY (typeID) REFERENCES Type(typeID)
-);
-
-DROP TABLE IF EXISTS Poketal;
-CREATE TABLE Poketal (
+DROP TABLE IF EXISTS PokeTal;
+CREATE TABLE PokeTal (
   pokemonID INT,
   talentID INT,
   FOREIGN KEY (pokemonID) REFERENCES Pokemon(pokemonID),
@@ -54,10 +48,8 @@ CREATE TABLE Poketal (
   poketalIsHide boolean
 );
 
-DROP TABLE IF EXISTS AttackType;
-CREATE TABLE Poketype (
-  attackID INT,
-  typeID INT,
-  FOREIGN KEY (attackID) REFERENCES Attack(attackID),
-  FOREIGN KEY (typeID) REFERENCES Type(typeID)
-);
+DROP TABLE IF EXISTS PokAttack;
+CREATE TABLE PokAttack(
+
+)
+
