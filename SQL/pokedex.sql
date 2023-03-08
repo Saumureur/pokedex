@@ -14,7 +14,7 @@ CREATE TABLE Pokemon (
   FOREIGN KEY (previousEvolution) REFERENCES Pokemon(pokemonID),
   FOREIGN KEY (followingEvolution) REFERENCES Pokemon(pokemonID),
   FOREIGN KEY (pokemonType1) REFERENCES Type(TypeID),
-  FOREIGN KEY (pokemonType2) REFERENCES Type(TypeID),
+  FOREIGN KEY (pokemonType2) REFERENCES Type(TypeID)
 );
 
 DROP TABLE IF EXISTS Talent;
@@ -28,8 +28,8 @@ DROP TABLE IF EXISTS Attack;
 CREATE TABLE Attack (
   attackID INT PRIMARY KEY,
   attackName VARCHAR(255),
-  attackDescription VARCHAR(255)
-  FOREIGN KEY (attackType) REFERENCES Type(TypeID),
+  attackDescription VARCHAR(255),
+  FOREIGN KEY (attackType) REFERENCES Type(TypeID)
 );
 
 DROP TABLE IF EXISTS Type;
@@ -41,7 +41,7 @@ CREATE TABLE Type (
 
 DROP TABLE IF EXISTS PokeTal;
 CREATE TABLE PokeTal (
-  PokeTalID PRIMARY KEY,
+  PokeTalID INT PRIMARY KEY,
   FOREIGN KEY (pokemonID) REFERENCES Pokemon(pokemonID),
   FOREIGN KEY (talentID) REFERENCES Talent(talentID),
   poketalIsHide boolean
@@ -49,7 +49,7 @@ CREATE TABLE PokeTal (
 
 DROP TABLE IF EXISTS PokAttack;
 CREATE TABLE PokAttack(
-  PokAttackID PRIMARY KEY,
+  PokAttackID INT PRIMARY KEY,
   FOREIGN KEY (pokemonID) REFERENCES Pokemon(pokemonID),
   FOREIGN KEY (attackID) REFERENCES Attack(attackID),
   naturalLearn boolean
