@@ -16,8 +16,6 @@ CREATE TABLE Pokemon (
   pokemonDescription VARCHAR(255),
   pokemonPreviousEvolution INT,
   pokemonFollowingEvolution INT,
-  pokemonFrontSpriteURL VARCHAR(255),
-  pokemonBackSpriteURL VARCHAR(255),
   pokemonType1 INT,
   pokemonType2 INT,
   FOREIGN KEY (pokemonPreviousEvolution) REFERENCES Pokemon(pokemonID),
@@ -28,14 +26,14 @@ CREATE TABLE Pokemon (
 
 DROP TABLE IF EXISTS Talent;
 CREATE TABLE Talent (
-  talentID INT PRIMARY KEY,
+  talentID INT PRIMARY KEY AUTO_INCREMENT,
   talenName VARCHAR(255),
   talentDescription VARCHAR(255)
 );
 
 DROP TABLE IF EXISTS Attack;
 CREATE TABLE Attack (
-  attackID INT PRIMARY KEY,
+  attackID INT PRIMARY KEY AUTO_INCREMENT,
   attackName VARCHAR(255),
   attackDescription VARCHAR(255),
   attackType INT,
