@@ -52,6 +52,6 @@ CREATE TABLE PokAttack(
   PokAttackID PRIMARY KEY,
   FOREIGN KEY (pokemonID) REFERENCES Pokemon(pokemonID),
   FOREIGN KEY (attackID) REFERENCES Attack(attackID),
-
+  naturalLearn boolean
 )
 
