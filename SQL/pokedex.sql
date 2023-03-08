@@ -13,8 +13,8 @@ CREATE TABLE Pokemon (
   pokemonBackSpriteURL VARCHAR(255),
   pokemonType1 INT,
   pokemonType2 INT,
-  FOREIGN KEY (previousEvolution) REFERENCES Pokemon(pokemonID),
-  FOREIGN KEY (followingEvolution) REFERENCES Pokemon(pokemonID),
+  FOREIGN KEY (pokemonPreviousEvolution) REFERENCES Pokemon(pokemonID),
+  FOREIGN KEY (pokemonFollowingEvolution) REFERENCES Pokemon(pokemonID),
   FOREIGN KEY (pokemonType1) REFERENCES Type(TypeID),
   FOREIGN KEY (pokemonType2) REFERENCES Type(TypeID)
 );
