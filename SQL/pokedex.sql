@@ -11,6 +11,8 @@ CREATE TABLE Pokemon (
   pokemonFollowingEvolution INT,
   pokemonFrontSpriteURL VARCHAR(255),
   pokemonBackSpriteURL VARCHAR(255),
+  pokemonType1 INT,
+  pokemonType2 INT,
   FOREIGN KEY (previousEvolution) REFERENCES Pokemon(pokemonID),
   FOREIGN KEY (followingEvolution) REFERENCES Pokemon(pokemonID),
   FOREIGN KEY (pokemonType1) REFERENCES Type(TypeID),
@@ -29,6 +31,7 @@ CREATE TABLE Attack (
   attackID INT PRIMARY KEY,
   attackName VARCHAR(255),
   attackDescription VARCHAR(255),
+  attackType INT,
   FOREIGN KEY (attackType) REFERENCES Type(TypeID)
 );
 
@@ -42,6 +45,8 @@ CREATE TABLE Type (
 DROP TABLE IF EXISTS PokeTal;
 CREATE TABLE PokeTal (
   PokeTalID INT PRIMARY KEY,
+  pokemonID INT,
+  talentID INT,
   FOREIGN KEY (pokemonID) REFERENCES Pokemon(pokemonID),
   FOREIGN KEY (talentID) REFERENCES Talent(talentID),
   poketalIsHide boolean
@@ -50,6 +55,8 @@ CREATE TABLE PokeTal (
 DROP TABLE IF EXISTS PokAttack;
 CREATE TABLE PokAttack(
   PokAttackID INT PRIMARY KEY,
+  pokemonID INT,
+  attackID INT,
   FOREIGN KEY (pokemonID) REFERENCES Pokemon(pokemonID),
   FOREIGN KEY (attackID) REFERENCES Attack(attackID),
   naturalLearn boolean
