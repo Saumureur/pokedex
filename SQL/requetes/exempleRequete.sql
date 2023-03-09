@@ -1,13 +1,9 @@
-SELECT Pokemon.ID, Pokemon.Name, Pokemon.Description, Pokemon.weight, Pokemon.height,
-  Type1.Name AS Type1, Type2.Name AS Type2,
-  Talent.Name AS Talent, Talent.Description AS TalentDescription,
-  Pokemon.frontSpriteURL, Pokemon.backSpriteURL,
-  PreviousEvolution.Name AS PreviousEvolution, FollowingEvolution.Name AS FollowingEvolution
+SELECT *
 FROM Pokemon
-LEFT JOIN Type AS Type1 ON Pokemon.Type1ID = Type1.ID
-LEFT JOIN Type AS Type2 ON (Pokemon.Type2ID IS NOT NULL AND Pokemon.Type2ID = Type2.ID)
-LEFT JOIN Poketal ON Poketal.PokemonID = Pokemon.ID
-LEFT JOIN Talent ON Poketal.TalentID = Talent.ID
-LEFT JOIN Pokemon AS PreviousEvolution ON Pokemon.previousEvolution = PreviousEvolution.ID
-LEFT JOIN Pokemon AS FollowingEvolution ON Pokemon.followingEvolution = FollowingEvolution.ID
-WHERE Pokemon.ID = 123;
+LEFT JOIN Type AS t1 ON Pokemon.pokemonType1 = t1.TypeID
+LEFT JOIN Type AS t2 ON Pokemon.pokemonType2 = t2.TypeID
+LEFT JOIN PokeTal ON Pokemon.pokemonID = PokeTal.pokemonID
+LEFT JOIN Talent ON PokeTal.talentID = Talent.talentID
+LEFT JOIN PokAttack ON Pokemon.pokemonID = PokAttack.pokemonID
+LEFT JOIN Attack ON PokAttack.attackID = Attack.attackID
+WHERE Pokemon.pokemonID = 62;
