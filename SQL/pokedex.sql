@@ -33,10 +33,11 @@ CREATE TABLE Talent (
 
 DROP TABLE IF EXISTS Attack;
 CREATE TABLE Attack (
-  attackID INT PRIMARY KEY AUTO_INCREMENT,
+  attackID INT PRIMARY KEY,
   attackName VARCHAR(255) NOT NULL,
   attackDescription VARCHAR(255),
   attackType INT DEFAULT 0,
+  isPhysical boolean DEFAULT 1,
   FOREIGN KEY (attackType) REFERENCES Type(TypeID)
 );
 
@@ -55,7 +56,7 @@ CREATE TABLE PokAttack(
   attackID INT NOT NULL,
   FOREIGN KEY (pokemonID) REFERENCES Pokemon(pokemonID),
   FOREIGN KEY (attackID) REFERENCES Attack(attackID),
-  naturalLearn boolean DEFAULT 0
+  naturalLearn boolean DEFAULT 1
 );
 
 #Ajout des contraintes

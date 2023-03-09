@@ -1,0 +1,18 @@
+INSERT INTO Attack (attackID, attackName, attackDescription, attackType, isPhysical) VALUES 
+(20, "Ultralaser", "Attaque très puissante qui requiert un tour de recharge après son utilisation", 1, false),
+(21, "Bélier", "Le lanceur charge violemment son adversaire", 1, true),
+(22, "Croc de Mort", "Le lanceur mord violemment son adversaire", 1, true),
+(23, "Lance-Soleil", "Le lanceur accumule de l'énergie solaire pour ensuite la projeter sur l'ennemi", 12, false),
+(24, "Bomb-Beurk", "Le lanceur envoie une boule de poison sur l'ennemi", 4, false),
+(25, "Poing-Karaté", "Le lanceur frappe l'ennemi avec un coup de poing puissant", 2, true),
+(26, "Tunnel", "Le lanceur creuse un tunnel pour se protéger ou se déplacer rapidement", 5, false),
+(27, "Poing-Glace", "Le lanceur frappe l'ennemi avec un poing glacé, pouvant le geler", 15, true),
+(28, "Siphon", "Le lanceur absorbe une partie des PV de l'ennemi", 11, true),
+(29, "Laser Glace", "Le lanceur tire un rayon de glace sur l'ennemi", 15, false),
+(30, "Blizzard", "Une tempête de neige s'abat sur le champ de bataille, infligeant des dégâts à tous les adversaires", 15, false),
+(31, "Lame de Roc", "Le lanceur lance des éclats de roche sur l'ennemi, causant des dégâts importants", 6, true),
+(32, "Crochetvenin", "Le lanceur pique l'ennemi avec une pointe empoisonnée, pouvant l'empoisonner", 4, true),
+(33, "Poing de Feu", "Le lanceur frappe l'ennemi avec un poing enflammé, pouvant le brûler", 10, true),
+(34, "Balayage", "Le lanceur balaye les jambes de l'ennemi, le faisant tomber et lui infligeant des dégâts", 2, true),
+(35, "Vampigraine", "Le lanceur draine les PV de l'ennemi et les transfère au lanceur", 12, false),
+(36, "Danse-Fleur", "Le lanceur danse, augmentant son taux de précision et sa vitesse", 12, false);
