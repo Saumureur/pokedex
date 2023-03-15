@@ -18,10 +18,10 @@ CREATE TABLE Pokemon (
   pokemonFollowingEvolution INT,
   pokemonType1 INT,
   pokemonType2 INT,
-  FOREIGN KEY (pokemonPreviousEvolution) REFERENCES Pokemon(pokemonID) DEFAULT NULL,
-  FOREIGN KEY (pokemonFollowingEvolution) REFERENCES Pokemon(pokemonID) DEFAULT NULL,
-  FOREIGN KEY (pokemonType1) REFERENCES Type(TypeID) DEFAULT 0,
-  FOREIGN KEY (pokemonType2) REFERENCES Type(TypeID) DEFAULT NULL
+  FOREIGN KEY (pokemonPreviousEvolution) REFERENCES Pokemon(pokemonID),
+  FOREIGN KEY (pokemonFollowingEvolution) REFERENCES Pokemon(pokemonID),
+  FOREIGN KEY (pokemonType1) REFERENCES Type(TypeID),
+  FOREIGN KEY (pokemonType2) REFERENCES Type(TypeID)
 );
 
 DROP TABLE IF EXISTS Talent;

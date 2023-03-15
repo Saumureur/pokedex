@@ -1,4 +1,4 @@
-INSERT INTO PokAttack(pokemonID, attackID, naturalLearn) VALUES
+INSERT INTO PokAttack(`pokemonID`, `attackID`, `naturalLearn`) VALUES
 (60, 23, 1),
 (60, 32, 1),
 (61, 23, 1),

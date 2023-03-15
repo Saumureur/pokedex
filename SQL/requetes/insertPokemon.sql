@@ -1,4 +1,4 @@
-INSERT INTO Pokemon (pokemonID, pokemonName,pokemonDescription,pokemonPreviousEvolution,pokemonFollowingEvolution,pokemonType1, pokemonType2) VALUES
+INSERT INTO Pokemon (`pokemonID`, `pokemonName`,`pokemonDescription`,`pokemonPreviousEvolution`,`pokemonFollowingEvolution`,`pokemonType1`, `pokemonType2`) VALUES
 (60, "Ptitard", "Ptitard (anglais : Poliwag ; japonais : ニョロモ Nyoromo) est un Pokémon de type Eau de la première génération. ", NULL, 61,11,NULL),
 (61, "Têtarte", "Têtarte (anglais : Poliwhirl ; japonais : ニョロゾ Nyorozo) est un Pokémon de type Eau de la première génération. ", 60, 62,11,NULL)
 (62, "Tartard", "Tartard (anglais : Poliwrath ; japonais : ニョロボン Nyorobon) est un Pokémon de type Eau et Combat de la première génération.  ", 62, NULL,11,2),

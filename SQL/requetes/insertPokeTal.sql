@@ -1,4 +1,4 @@
-INSERT INTO PokeTal (pokemonID, talentID, poketalIsHide)
+INSERT INTO PokeTal (`pokemonID`, `talentID`, `poketalIsHide`)
 VALUES
 (60, 75, 0),
 (60, 11, 0),

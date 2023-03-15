@@ -1,4 +1,4 @@
-INSERT INTO Talent (talentID, talentName, talentDescription) VALUES
+INSERT INTO Talent (`talentID`, `talentName`, `talentDescription`) VALUES
 (75, "Glissade", "Augmente la puissance des attaques de type Glace sur sol glacé"),
 (11, "Absorb Eau", "Récupère des PV en absorbant l'eau qui entoure le Pokémon"),
 (91, "Adaptabilité", "Augmente la puissance des attaques de même type que le Pokémon"),
@@ -11,4 +11,5 @@ INSERT INTO Talent (talentID, talentName, talentDescription) VALUES
 (87, "Poing de Fer", "Augmente la puissance des attaques de poing"),
 (34, "Chlorophylle", "Double la vitesse du Pokémon sous le soleil"),
 (18, "Médic Nature", "Soigne les altérations d'état du Pokémon en contact avec le sol"),
-(102, "Feuille Garde", "Empêche les altérations d'état lorsque le terrain est ensoleillé");
+(102, "Feuille Garde", "Empêche les altérations d'état lorsque le terrain est ensoleillé")
+(98, 'Attention', 'Empêche les capacités ennemies de baisser la Défense du Pokémon.');

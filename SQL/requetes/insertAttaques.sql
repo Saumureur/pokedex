@@ -1,4 +1,4 @@
-INSERT INTO Attack (attackID, attackName, attackDescription, attackType, isPhysical) VALUES 
+INSERT INTO Attack (`attackID`, `attackName`, `attackDescription`, `attackType`, `isPhysical`) VALUES 
 (20, "Ultralaser", "Attaque très puissante qui requiert un tour de recharge après son utilisation", 1, false),
 (21, "Bélier", "Le lanceur charge violemment son adversaire", 1, true),
 (22, "Croc de Mort", "Le lanceur mord violemment son adversaire", 1, true),
