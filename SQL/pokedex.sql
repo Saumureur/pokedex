@@ -27,7 +27,7 @@ CREATE TABLE Pokemon (
 DROP TABLE IF EXISTS Talent;
 CREATE TABLE Talent (
   talentID INT PRIMARY KEY,
-  talenName VARCHAR(255) NOT NULL,
+  talentName VARCHAR(255) NOT NULL,
   talentDescription VARCHAR(255)
 );
 
