@@ -18,7 +18,7 @@ UPDATE Pokemon
 SET pokemonPreviousEvolution = CASE pokemonID
     WHEN 60 THEN NULL
     WHEN 61 THEN 60
-    WHEN 62 THEN 62
+    WHEN 62 THEN 61
     WHEN 58 THEN NULL
     WHEN 59 THEN 58
     WHEN 63 THEN NULL
